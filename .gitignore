@@ -1,2 +1,5 @@
 # All zipfiles in this directory
 *.zip
+
+# All packages
+packages/*

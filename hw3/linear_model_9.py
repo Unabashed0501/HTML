@@ -30,7 +30,7 @@ def linear_regression(X, y):
     return w_lin
 
 num_experiments = 128
-esqr_values = []
+  = []
 
 for i in range(num_experiments):
     # Set a different random seed for each experiment
