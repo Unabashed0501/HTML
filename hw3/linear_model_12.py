@@ -13,7 +13,7 @@ N_train = 256
 mean_pos = [3, 2]
 cov_pos = [[0.4, 0], [0, 0.4]]
 
-N_outlier = 256
+N_outlier = 16
 mean_out = [0, 6]
 cov_out = [[0.1, 0], [0, 0.3]]
 
@@ -54,11 +54,12 @@ for i in range(num_experiments):
     X_train = np.vstack((X_train_pos, X_train_neg))
     X_train = np.vstack((X_train, X_train_out))
     y_train = np.vstack((y_train_pos, y_train_neg))
+    y_train = np.vstack((y_train, y_train_out))
     
     # Shuffle the training data
-    indices = np.random.permutation(N_train)
-    X_train = X_train[indices]
-    y_train = y_train[indices]
+    # indices = np.random.permutation(N_train)
+    # X_train = X_train[indices]
+    # y_train = y_train[indices]
     
     # # Run linear regression
     w_lin = linear_regression(X_train, y_train)
